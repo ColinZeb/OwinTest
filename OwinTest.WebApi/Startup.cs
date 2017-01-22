@@ -24,6 +24,7 @@ namespace OwinTest
             appBuilder.UseAbp();
             // Configure Web API for self-host. 
             HttpConfiguration config = Abp.Dependency.IocManager.Instance.Resolve<IAbpWebApiConfiguration>().HttpConfiguration;
+            config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
