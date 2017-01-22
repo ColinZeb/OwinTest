@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Abp.Modules;
+using OwinTest.Test;
 
 namespace OwinTest
 {
@@ -9,6 +10,7 @@ namespace OwinTest
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
+            IocManager.Register<ITestService, TestService>(Abp.Dependency.DependencyLifeStyle.Transient);
         }
     }
 }
