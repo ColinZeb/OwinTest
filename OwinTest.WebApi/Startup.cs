@@ -1,5 +1,8 @@
-﻿using Abp.WebApi.Configuration;
+﻿using Abp.Owin;
+using Abp.WebApi.Configuration;
+using Microsoft.Owin;
 using Owin;
+using OwinTest;
 using OwinTest.Filters;
 using System;
 using System.Collections.Generic;
@@ -8,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 
+
+[assembly: OwinStartup(typeof(Startup))]
 namespace OwinTest
 {
     public class Startup
