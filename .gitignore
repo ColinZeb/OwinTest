@@ -240,3 +240,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+OwinTest.Web/App_Data/Logs/Logs.txt
