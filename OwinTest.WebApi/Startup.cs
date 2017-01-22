@@ -1,4 +1,5 @@
-﻿using Owin;
+﻿using Abp.WebApi.Configuration;
+using Owin;
 using OwinTest.Filters;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace OwinTest
         public void Configuration(IAppBuilder appBuilder)
         {
             // Configure Web API for self-host. 
-            HttpConfiguration config = new HttpConfiguration();
+            HttpConfiguration config = Abp.Dependency.IocManager.Instance.Resolve<IAbpWebApiConfiguration>().HttpConfiguration;
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
