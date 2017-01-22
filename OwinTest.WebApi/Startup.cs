@@ -16,6 +16,7 @@ namespace OwinTest
         // parameter in the WebApp.Start method.
         public void Configuration(IAppBuilder appBuilder)
         {
+            appBuilder.UseAbp();
             // Configure Web API for self-host. 
             HttpConfiguration config = Abp.Dependency.IocManager.Instance.Resolve<IAbpWebApiConfiguration>().HttpConfiguration;
             config.Routes.MapHttpRoute(
