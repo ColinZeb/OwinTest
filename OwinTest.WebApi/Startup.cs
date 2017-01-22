@@ -23,6 +23,7 @@ namespace OwinTest
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            config.Filters.Add(new ApiFilter());
             appBuilder.UseWebApi(config);
         }
     }
