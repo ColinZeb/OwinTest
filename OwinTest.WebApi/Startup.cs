@@ -38,7 +38,7 @@ namespace OwinTest
             config.EnableDependencyInjection();
             config.EnsureInitialized();
 
-            //config.MapHttpAttributeRoutes();
+            config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
@@ -47,8 +47,8 @@ namespace OwinTest
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<Movie>("Movie");
             builder.EnableLowerCamelCase();
-            config.MapODataServiceRoute("odataRoute", "odata", builder.GetEdmModel());
-            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
+            //config.MapODataServiceRoute("odataRoute", "odata", builder.GetEdmModel());
+            //config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
 
         }
     }
