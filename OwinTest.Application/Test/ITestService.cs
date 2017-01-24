@@ -11,5 +11,8 @@ namespace OwinTest.Test
         bool GetTrue();
 
         void ThrowException();
+
+
+        IQueryable<Movie> QueryMovie();
     }
 }
