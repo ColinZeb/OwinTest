@@ -44,11 +44,7 @@ namespace OwinTest
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-            ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
-            builder.EntitySet<Movie>("Movie");
-            builder.EnableLowerCamelCase();
-            config.MapODataServiceRoute("odataRoute", "odata", builder.GetEdmModel());
-            config.Count().Filter().OrderBy().Expand().Select().MaxTop(null); //new line
+           
 
         }
     }
